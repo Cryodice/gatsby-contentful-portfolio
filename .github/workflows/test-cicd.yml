@@ -1,0 +1,40 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+
+name: CI/CD for test assignment
+
+on:
+  push:
+    branches: [ v0.1 ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build Gatsby site
+    runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_SPACE_ID: ${{secrets.CONTENTFUL_SPACE_ID}}
+      CONTENTFUL_ACCESS_TOKEN: ${{secrets.CONTENTFUL_ACCESS_TOKEN}}
+      MAILCHIMP_ENDPOINT: ${{secrets.MAILCHIMP_ENDPOINT}}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2.3.1
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      
+      - name: Install Project Dependencies
+        run: npm install
+      
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@2.12.34
+      
+      - name: Build
+        run: gatsby build
+      
+      - name: Verify build
+        run: ls -la public
