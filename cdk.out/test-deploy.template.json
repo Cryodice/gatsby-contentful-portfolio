@@ -1,0 +1,191 @@
+{
+  "Resources": {
+    "mybuckettestiam443322011F0930": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "WebsiteConfiguration": {
+          "ErrorDocument": "index.html",
+          "IndexDocument": "index.html"
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "test-deploy/my-bucket-test-iam-443322/Resource"
+      }
+    },
+    "mybuckettestiam443322PolicyCCE1B2DC": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "mybuckettestiam443322011F0930"
+        },
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": {
+                "CanonicalUser": {
+                  "Fn::GetAtt": [
+                    "OAIE1EFC67F",
+                    "S3CanonicalUserId"
+                  ]
+                }
+              },
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "mybuckettestiam443322011F0930",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "s3:GetBucket*",
+                "s3:GetObject*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "CanonicalUser": {
+                  "Fn::GetAtt": [
+                    "OAIE1EFC67F",
+                    "S3CanonicalUserId"
+                  ]
+                }
+              },
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "mybuckettestiam443322011F0930",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "mybuckettestiam443322011F0930",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "test-deploy/my-bucket-test-iam-443322/Policy/Resource"
+      }
+    },
+    "OAIE1EFC67F": {
+      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+      "Properties": {
+        "CloudFrontOriginAccessIdentityConfig": {
+          "Comment": "OAI for my-website-test-44332211 website."
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "test-deploy/OAI/Resource"
+      }
+    },
+    "mywebsitetest44332211cfdCFDistributionC6546434": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "DefaultCacheBehavior": {
+            "AllowedMethods": [
+              "GET",
+              "HEAD"
+            ],
+            "CachedMethods": [
+              "GET",
+              "HEAD"
+            ],
+            "Compress": true,
+            "ForwardedValues": {
+              "Cookies": {
+                "Forward": "none"
+              },
+              "QueryString": false
+            },
+            "TargetOriginId": "origin1",
+            "ViewerProtocolPolicy": "redirect-to-https"
+          },
+          "DefaultRootObject": "index.html",
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": [
+            {
+              "ConnectionAttempts": 3,
+              "ConnectionTimeout": 10,
+              "DomainName": {
+                "Fn::GetAtt": [
+                  "mybuckettestiam443322011F0930",
+                  "RegionalDomainName"
+                ]
+              },
+              "Id": "origin1",
+              "S3OriginConfig": {
+                "OriginAccessIdentity": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "origin-access-identity/cloudfront/",
+                      {
+                        "Ref": "OAIE1EFC67F"
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "PriceClass": "PriceClass_100",
+          "ViewerCertificate": {
+            "CloudFrontDefaultCertificate": true
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "test-deploy/my-website-test-44332211-cfd/CFDistribution"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Modules": "aws-cdk=1.91.0,@aws-cdk/assets=1.90.1,@aws-cdk/aws-applicationautoscaling=1.90.1,@aws-cdk/aws-autoscaling-common=1.90.1,@aws-cdk/aws-certificatemanager=1.90.1,@aws-cdk/aws-cloudfront=1.90.1,@aws-cdk/aws-cloudwatch=1.90.1,@aws-cdk/aws-codeguruprofiler=1.90.1,@aws-cdk/aws-ec2=1.90.1,@aws-cdk/aws-ecr=1.90.1,@aws-cdk/aws-ecr-assets=1.90.1,@aws-cdk/aws-events=1.90.1,@aws-cdk/aws-iam=1.90.1,@aws-cdk/aws-kms=1.90.1,@aws-cdk/aws-lambda=1.90.1,@aws-cdk/aws-logs=1.90.1,@aws-cdk/aws-s3=1.90.1,@aws-cdk/aws-s3-assets=1.90.1,@aws-cdk/aws-sqs=1.90.1,@aws-cdk/aws-ssm=1.90.1,@aws-cdk/cloud-assembly-schema=1.90.1,@aws-cdk/core=1.90.1,@aws-cdk/cx-api=1.90.1,@aws-cdk/region-info=1.90.1,jsii-runtime=node.js/v10.19.0"
+      },
+      "Metadata": {
+        "aws:cdk:path": "test-deploy/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "cloudfronturl": {
+      "Value": {
+        "Fn::GetAtt": [
+          "mywebsitetest44332211cfdCFDistributionC6546434",
+          "DomainName"
+        ]
+      }
+    }
+  }
+}

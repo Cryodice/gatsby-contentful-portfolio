@@ -1,0 +1,183 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "test-deploy": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "test-deploy.template.json"
+      },
+      "metadata": {
+        "/test-deploy/my-bucket-test-iam-443322/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mybuckettestiam443322011F0930",
+            "trace": [
+              "new Bucket (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1323:22)",
+              "new AwsCdkStack (/mnt/wsl/gatsby-contentful-portfolio/lib/aws-cdk-stack.ts:17:20)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/bin/aws-cdk.ts:11:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/share/nodejs/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/test-deploy/my-bucket-test-iam-443322/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mybuckettestiam443322PolicyCCE1B2DC",
+            "trace": [
+              "new BucketPolicy (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.ts:42:21)",
+              "Bucket.addToResourcePolicy (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:504:21)",
+              "CloudFrontWebDistribution.toOriginProperty (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.ts:1034:52)",
+              "new CloudFrontWebDistribution (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.ts:792:35)",
+              "new AwsCdkStack (/mnt/wsl/gatsby-contentful-portfolio/lib/aws-cdk-stack.ts:42:28)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/bin/aws-cdk.ts:11:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/share/nodejs/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/test-deploy/OAI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OAIE1EFC67F",
+            "trace": [
+              "new OriginAccessIdentity (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:112:21)",
+              "new AwsCdkStack (/mnt/wsl/gatsby-contentful-portfolio/lib/aws-cdk-stack.ts:26:27)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/bin/aws-cdk.ts:11:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/share/nodejs/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/test-deploy/my-website-test-44332211-cfd/CFDistribution": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mywebsitetest44332211cfdCFDistributionC6546434",
+            "trace": [
+              "new CloudFrontWebDistribution (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/aws-cloudfront/lib/web-distribution.ts:929:26)",
+              "new AwsCdkStack (/mnt/wsl/gatsby-contentful-portfolio/lib/aws-cdk-stack.ts:42:28)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/bin/aws-cdk.ts:11:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/share/nodejs/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/test-deploy/cloudfronturl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cloudfronturl",
+            "trace": [
+              "new AwsCdkStack (/mnt/wsl/gatsby-contentful-portfolio/lib/aws-cdk-stack.ts:132:5)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/bin/aws-cdk.ts:11:1)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Module.m._compile (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "main (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/mnt/wsl/gatsby-contentful-portfolio/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:778:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)",
+              "Module.load (internal/modules/cjs/loader.js:653:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:593:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:585:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:831:12)",
+              "findNodeScript.then.existing (/usr/share/nodejs/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/test-deploy/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "construct (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5)",
+              "visit (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.App.process.once (/mnt/wsl/gatsby-contentful-portfolio/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:286:20)",
+              "process.emit (events.js:198:13)",
+              "process.EventEmitter.emit (domain.js:448:20)",
+              "process.emit (/mnt/wsl/gatsby-contentful-portfolio/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:126:23)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

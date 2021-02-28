@@ -29,7 +29,7 @@ export default IndexPage
 
 export const query = graphql`
   query HomeQuery {
-    portfolio: allContentfulPortfolio {
+    portfolio: allContentfulPortfolio (filter: {node_locale: {eq: "en-US"}}) {
       nodes {
         ...PortfolioCard
       }
